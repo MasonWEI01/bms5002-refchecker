@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>引用核查台 · Rapid Diagnostics Review</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="dot"></span>
+    <strong>引用核查台</strong>
+    <span class="sub">Rapid diagnostics · 28 篇文献逐句核对</span>
+  </div>
+  <div class="legend" id="legend"></div>
+  <div class="tools">
+    <label class="chk"><input type="checkbox" id="onlyCited"> 只看引用句</label>
+    <div class="progress">
+      <div class="bar"><i id="barFill"></i></div>
+      <span id="progText">0 / 50</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="paper" id="paper"></section>
+  <aside class="panel" id="panel">
+    <div class="ph-empty" id="phEmpty">
+      <div class="ph-title">把鼠标移到左侧带底色的句子上</div>
+      <div class="ph-desc">右侧会显示这句引用了哪几篇文献、每篇「大致讲了什么」，点文献编号可以跳到原 PDF 的对应页并定位到被引用的原句。</div>
+      <ul class="ph-tips">
+        <li><b>j / k</b> 上下一句引用</li>
+        <li><b>x</b> 标记已核对</li>
+        <li><b>点击编号</b> 打开来源页</li>
+      </ul>
+    </div>
+    <div class="ph-body" id="phBody" hidden>
+      <div class="card-sent">
+        <div class="row1"><span class="badge" id="typeBadge"></span><button class="mark" id="markBtn">标记已核对</button></div>
+        <p class="sent" id="sentText"></p>
+      </div>
+      <div class="srcs" id="srcs"></div>
+      <div class="viewer" id="viewer" hidden>
+        <div class="vhead">
+          <span id="vLabel"></span>
+          <a id="vPdf" target="_blank" rel="noopener">在 PDF 中打开 ↗</a>
+        </div>
+        <div class="vimg"><img id="vImg" alt="来源页"></div>
+      </div>
+    </div>
+  </aside>
+</main>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
